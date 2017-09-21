@@ -1,0 +1,21 @@
+<div class="deployedMeme orangeBG col-sm-12">
+    <div class="col-xs-3 col-sm-2">
+        <button class="btn-lg counterSpace"><span class="glyphicon glyphicon-thumbs-up"></span></button>
+        <?php echo"<p class='likeStatsReverse hidden-xxs'>".($this->counterRows[$this->i]['upvotes']? $this->counterRows[$this->i]['upvotes']:'0')."</p>"; ?>
+        <br>
+        <button class="btn-lg"><span class="glyphicon glyphicon-thumbs-down"></span></button>
+        <?php echo"<p class='likeStatsReverse hidden-xxs'>".($this->counterRows[$this->i]['downvotes']? $this->counterRows[$this->i]['downvotes']:'0')."</p>"; ?>
+    </div>
+     <div class="hidden-xs col-sm-1 col-lg-5">
+        <br>
+    </div>
+    <div class="hidden-xxs col-xs-3 col-lg-2">
+        <button class="btn-lg counterSpace">Counter</button><br>
+        <a href="#">View Counters(148)</a>
+    </div>
+    <div class="col-xxs-9 col-xs-6 col-lg-3">
+        <?php echo"<img class='memeImg' src='data:image;base64,".$this->counterRows[$this->i]['picture']."' alt='orangeMeme' onclick='showModal(this)'>"; ?>
+    </div>
+</div>
+
+<!--  -->

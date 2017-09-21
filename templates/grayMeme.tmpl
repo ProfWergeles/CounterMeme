@@ -1,0 +1,19 @@
+<div class="deployedMeme grayBG col-sm-12">
+    <div class="col-xxs-9 col-xs-6 col-lg-3">
+        <?php echo"<img class='memeImg' src='".$this->counterRows[$this->i]['picture']."' alt='grayMeme' onclick='showModal(this)'>"; ?>
+    </div>
+    <div class="hidden-xxs col-xs-3 col-lg-2">
+        <button class="btn-lg btn-warning counterSpace">Counter</button><br>
+        <a href="#">View Counters(148)</a>
+    </div>
+    <div class="hidden-xs col-sm-1 col-lg-5">
+        <br>
+    </div>
+    <div class="col-xs-3 col-sm-2">
+        <?php echo"<p class='likeStats hidden-xxs'>".($this->counterRows[$this->i]['upvotes']? $this->counterRows[$this->i]['upvotes']:'0')."</p>"; ?>
+        <button class="btn-lg btn-warning counterSpace"><span class="glyphicon glyphicon-thumbs-up"></span></button>
+        <br>
+        <?php echo"<p class='likeStats hidden-xxs'>".($this->counterRows[$this->i]['downvotes']? $this->counterRows[$this->i]['upvotes']:'0')."</p>"; ?>
+        <button class="btn-lg btn-warning"><span class="glyphicon glyphicon-thumbs-down"></span></button>
+    </div>
+</div>
