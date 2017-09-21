@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <?php session_start();
 //send here with smackID and ID?>
