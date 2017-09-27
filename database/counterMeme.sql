@@ -1,8 +1,8 @@
-drop table if exists cmUsers,logs;
+/*/*drop table if exists cmUsers,logs;*/*/
 create table cmUsers 
 (
 	ID int not null auto_increment,
-	
+	creationTime DATETIME,
 	rank enum('Newbie','Mediocre','Pro','Legend') default 'Newbie',
 	fName varchar(255),
 	lName varchar(255),
@@ -12,7 +12,10 @@ create table cmUsers
 	isAdmin boolean default 0,
 	isPrivate boolean default 0,
 	profilePic varchar(255),
+	/*profilePic BLOB,*/
 	aboutMe varchar(255),
+	age int unsigned, 
+	gender varchar(15),
 
 	primary key (ID)
 );
