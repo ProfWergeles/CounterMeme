@@ -1,5 +1,5 @@
-/*/*drop table if exists cmUsers,logs;*/*/
-create table cmUsers 
+/*/*drop table if exists users,logs;*/*/
+create table users 
 (
 	ID int not null auto_increment,
 	creationTime DATETIME,
@@ -19,8 +19,8 @@ create table cmUsers
 
 	primary key (ID)
 );
-/*
-create table logs 
+
+*****create table logs 
 (
 	ipAdress varchar(255),
 	actioon varchar(255),
@@ -32,9 +32,8 @@ create table (ID)followers
 (
 	accountID int,
 	followerID int,
-	dateFollowed date,
-	
-	primary key
+	followedTime DATETIME,
+	FOREIGN KEY fk_accountID(accountID) REFERENCES 
 );
 create table (ID)following
 (
@@ -63,7 +62,6 @@ create table (ID)smackdowns
 	caption varchar(255),
 	
 
-	primary key (ID),
 	foreign key userID references user(ID)
 	
 );
@@ -97,4 +95,4 @@ create table (ID)memes
 	primary key (ID),
 	foreign key (userID) references user(ID),
 );
-*/
+
