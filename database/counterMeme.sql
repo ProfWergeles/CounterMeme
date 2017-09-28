@@ -3,7 +3,7 @@ create table users
 (
 	ID int not null auto_increment,
 	creationTime DATETIME,
-	rank enum('Newbie','Mediocre','Pro','Legend') default 'Newbie',
+	rank enum('Newbie','Mediocre','Pro','MemeMaster','Legend') default 'Newbie',
 	fName varchar(255),
 	lName varchar(255),
 	email varchar(255),
