@@ -20,12 +20,12 @@ create table users
 	primary key (ID)
 );
 
-*****create table logs 
+create table logs 
 (
 	ipAdress varchar(255),
-	actioon varchar(255),
+	action varchar(255),
 	userID int,
-	timestaamp time
+	timestamp time
 );
 
 create table (ID)followers
@@ -33,17 +33,9 @@ create table (ID)followers
 	accountID int,
 	followerID int,
 	followedTime DATETIME,
-	FOREIGN KEY fk_accountID(accountID) REFERENCES 
+	FOREIGN KEY fk_accountID(accountID) REFERENCES users(ID),
+	FOREIGN KEY fk_accountID(followerID) REFERENCES users(ID)
 );
-create table (ID)following
-(
-	userID int, 
-	dateFollowed date,
-	primary key (userID),
-	foreign key userID references user(ID)
-
-);
-
 
 create table (ID)smackdowns 
 (
@@ -60,17 +52,18 @@ create table (ID)smackdowns
 	viewCount int,
 	tags varchar(255),
 	caption varchar(255),
-	
+	memeCount int,
 
-	foreign key userID references user(ID)
+	foreign key creatorID references user(ID)
 	
 );
-create table counters 
+create table memes 
 (
 	ID int auto_increment,
-	memeID int,
+	parentMemeID int,
 	smackdownID int,
 	parentID int default null,
+	creatorID int,
 
 	img varchar(255),
 	uVotes int,
@@ -78,21 +71,7 @@ create table counters
 	creationDate date,
 
 	primary key (ID),
-	foreign key (memeID) references meme(ID),
+	foreign key (parentMemeID) references memes(ID),
 	foreign key (smackdownID) references smackdown(ID),
-	foreign key (parentID) references counter(ID) 
+	foreign key (creatorID) references users(ID)
 );
-
-
-create table (ID)memes 
-( 
-	ID int auto_increment, 
-	userID int,
-
-	img varchar(255),
-	uVotes int,
-
-	primary key (ID),
-	foreign key (userID) references user(ID),
-);
-
