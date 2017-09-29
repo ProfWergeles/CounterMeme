@@ -53,6 +53,7 @@ create table (ID)smackdowns
 	tags varchar(255),
 	caption varchar(255),
 	memeCount int,
+	tags varchar(255),
 
 	foreign key creatorID references user(ID)
 	
@@ -64,6 +65,7 @@ create table memes
 	smackdownID int,
 	parentID int default null,
 	creatorID int,
+	tags varchar(255),
 
 	img varchar(255),
 	uVotes int,
